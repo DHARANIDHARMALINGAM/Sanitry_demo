@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from '@portabletext/react'
+
 export interface Author {
   name: string
 }
@@ -10,5 +12,5 @@ export interface Post {
   }
   publishedAt: string
   author?: Author
-  body: any
+  body: PortableTextBlock[]
 }

@@ -29,11 +29,11 @@ const postQuery = `
 /* Static Generation                */
 /* -------------------------------- */
 export async function generateStaticParams() {
-  const posts: Post[] = await client.fetch(
+  const posts: { slug: string }[] = await client.fetch(
     `*[_type == "post"]{ "slug": slug.current }`
   )
 
-  return posts.map((post: { slug: string }) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }))
 }
